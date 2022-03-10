@@ -96,6 +96,9 @@
       <AdditionalLibraryDirectories>C:\Users\pdhar\Desktop\Advanced Game Development\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>lib /NOLOGO /OUT:"$(TargetPath).lib" "$(ProjectDir)$(IntDir)*.obj"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -115,6 +118,9 @@
       <AdditionalLibraryDirectories>C:\Users\pdhar\Desktop\Advanced Game Development\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>lib /NOLOGO /OUT:"$(TargetPath).lib" "$(ProjectDir)$(IntDir)*.obj"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -145,6 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Image Include="..\..\Labs\[Lab 2] Provided Materials\Provided\mushroom50-50.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Game.cpp" />
     <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\main.cpp" />
     <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Window.cpp" />
@@ -152,10 +161,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Game.h" />
     <ClInclude Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Window.h" />
-    <ClInclude Include="..\..\SFMLTest\Vector.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\Labs\[Lab 2] Provided Materials\Provided\mushroom50-50.png" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

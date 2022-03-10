@@ -15,13 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\Labs\[Lab 2] Provided Materials\Provided\mushroom50-50.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Window.cpp">
+    <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\main.cpp">
+    <ClCompile Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,13 +37,8 @@
     <ClInclude Include="..\..\Labs\[Lab 2] Provided Materials\Provided\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\SFMLTest\Vector.h">
+    <ClInclude Include="Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\Labs\[Lab 2] Provided Materials\Provided\mushroom50-50.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>

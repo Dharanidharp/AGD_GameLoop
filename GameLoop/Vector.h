@@ -2,11 +2,14 @@
 class Vector
 {
 public:
-	Vector(float x, float y) : _x(x), _y(y)
-	{}
+	Vector(float x, float y)
+	{
+		_x = x;
+		_y = y;
+	}
 
-	float x() const { return _x; }
-	float y() const { return _y; }
+	float x() { return _x; }
+	float y() { return _y; }
 
 private:
 	float _x;

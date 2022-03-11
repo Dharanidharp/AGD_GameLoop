@@ -10,7 +10,7 @@
 //      * Load the texture file (mushroom50-50.png) into the sf::Texture member variable using the loadFromFile function of the sf::Texture class.
 //      * Set the sf::Texture variable as the texture of the sf::Sprite member (using the sf::Sprite::setTexture(sf::Texture) function).
 
-Game::Game() : window{ "Game", sf::Vector2u(800,600) }, movement{4.0f,4.0f}, pause(false)
+Game::Game() : window{ "Game", sf::Vector2u(800,600) }, movement{ 4.0f,4.0f }, pause{ false }
 {
 	mushroomTexture.loadFromFile("../GameLoop/mushroom50-50.png");
 	sprite.setTexture(mushroomTexture);

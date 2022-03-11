@@ -117,7 +117,7 @@ void Game::moveMushroom()
 	}
 
 	// set mushroom position
-	//sprite.setPosition((sprite.getPosition().x + movement.x()), (sprite.getPosition().y + movement.y()));
+	sprite.setPosition((sprite.getPosition().x + movement.x()), 0);
 
 }
 

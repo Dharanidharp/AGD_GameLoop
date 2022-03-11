@@ -22,7 +22,7 @@ int main()
     //   2. Ask the game instance to update its state.
     //   3. Ask the game instance to render.
 
-    while (!game.window()->isWindowDone())
+    while (!game.windowMember()->isWindowDone())
     {
         game.handleInput();
         game.update();

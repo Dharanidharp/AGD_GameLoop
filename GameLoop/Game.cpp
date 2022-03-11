@@ -95,8 +95,8 @@ void Game::moveMushroom()
 {
 	sf::Vector2u windowSize = windowMember()->getWindowSize();
 	sf::Vector2u textureSize = mushroomTexture.getSize();
-	float xRightLimit = windowSize.x - textureSize.x;
-	float yBottomLimit = windowSize.y - textureSize.y;
+	int xRightLimit = windowSize.x - textureSize.x;
+	int yBottomLimit = windowSize.y - textureSize.y;
 
 	// right or left
 	bool bouncesRight = (sprite.getPosition().x > xRightLimit && movement.x() > 0);

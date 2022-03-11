@@ -151,9 +151,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Image Include="..\..\Labs\[Lab 2] Provided Materials\Provided\mushroom50-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -162,6 +159,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Vector.h" />
     <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Labs\[Lab 2] Provided Materials\Provided\mushroom50-50.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

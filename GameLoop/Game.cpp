@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <iostream>
 
 // CONSTRUCTOR AND DESTRUCTOR
 
@@ -30,7 +31,15 @@ Game::~Game()
 // 3. For handling the input. This logic will not handle any input yet, so define an empty handling function.
 void Game::handleInput()
 {
+	sf::Event event;
 
+	if (event.type == sf::Event::KeyPressed) 
+	{
+		if (event.key.code == sf::Keyboard::Space) 
+		{
+			pause = !pause;
+		}
+	}
 }
 
 
@@ -40,8 +49,11 @@ void Game::handleInput()
 //       but it will work for now).
 void Game::update()
 {
-	moveMushroom();
-	windowMember()->update();
+	if (!pause) 
+	{
+		moveMushroom();
+		windowMember()->update();
+	}
 }
 
 
@@ -51,9 +63,13 @@ void Game::update()
 //    c) Our window also offers functionality for displaying all that has been drawn since the last clear. Call the method that ends the draw on the window now.
 void Game::render()
 {
-	windowMember()->beginDraw();
-	windowMember()->draw(sprite);
-	windowMember()->endDraw();
+	if (!pause) 
+	{
+		windowMember()->beginDraw();
+		windowMember()->draw(sprite);
+		windowMember()->endDraw();
+	}
+	
 }
 
 

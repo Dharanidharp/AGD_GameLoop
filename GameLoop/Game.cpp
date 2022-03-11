@@ -9,7 +9,7 @@
 //      * Load the texture file (mushroom50-50.png) into the sf::Texture member variable using the loadFromFile function of the sf::Texture class.
 //      * Set the sf::Texture variable as the texture of the sf::Sprite member (using the sf::Sprite::setTexture(sf::Texture) function).
 
-Game::Game() : window{ "Game", sf::Vector2u(800,600) }, vector{ 4.0f,4.0f }
+Game::Game() : window{ "Game", sf::Vector2u(800,600) }, v{ 4.0f,4.0f }
 {
 	mushroomTexture.loadFromFile("../GameLoop/mushroom50-50.png");
 	sprite.setTexture(mushroomTexture);
@@ -41,7 +41,7 @@ void Game::handleInput()
 void Game::update()
 {
 	moveMushroom();
-	window()->update();
+	windowMember()->update();
 }
 
 
@@ -51,12 +51,14 @@ void Game::update()
 //    c) Our window also offers functionality for displaying all that has been drawn since the last clear. Call the method that ends the draw on the window now.
 void Game::render()
 {
-
+	windowMember()->beginDraw();
+	windowMember()->draw(sprite);
+	windowMember()->endDraw();
 }
 
 
 // 6. Define the function that returns a pointer to the window member variable of this class.
-Window* Game::window()
+Window* Game::windowMember()
 {
 	return &window;
 }
@@ -89,6 +91,13 @@ Window* Game::window()
 //    mushroom.xPosition <- mushroom.xPosition + movement.x 
 //    mushroom.yPosition <- mushroom.yPosition + movement.y
 
+void Game::moveMushroom()
+{
+	sf::Vector2u windowSize = windowMember()->getWindowSize();
+	sf::Vector2u textureSize = mushroomTexture.getSize();
+	float xRightLimit = windowSize.x - textureSize.x;
+	float yBottomLimit = windowSize.y - textureSize.y;
 
+}
 
 

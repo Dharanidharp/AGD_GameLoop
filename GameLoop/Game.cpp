@@ -104,7 +104,7 @@ void Game::moveMushroom()
 
 	if (bouncesRight || bouncesLeft)
 	{
-		-movement.x();
+		movement.setX(-movement.x());
 	}
 
 	// top or bottom
@@ -113,7 +113,7 @@ void Game::moveMushroom()
 
 	if (bouncesBottom || bouncesTop)
 	{
-		-movement.y();
+		movement.setY(-movement.y());
 	}
 
 	// set mushroom position

@@ -9,7 +9,7 @@
 //      * Load the texture file (mushroom50-50.png) into the sf::Texture member variable using the loadFromFile function of the sf::Texture class.
 //      * Set the sf::Texture variable as the texture of the sf::Sprite member (using the sf::Sprite::setTexture(sf::Texture) function).
 
-Game::Game() : window{ "Game", sf::Vector2u(800,600) }, v{ 4.0f,4.0f }
+Game::Game() : window{ "Game", sf::Vector2u(800,600) }, movement{4.0f,4.0f}
 {
 	mushroomTexture.loadFromFile("../GameLoop/mushroom50-50.png");
 	sprite.setTexture(mushroomTexture);
@@ -97,6 +97,27 @@ void Game::moveMushroom()
 	sf::Vector2u textureSize = mushroomTexture.getSize();
 	float xRightLimit = windowSize.x - textureSize.x;
 	float yBottomLimit = windowSize.y - textureSize.y;
+
+	// right or left
+	bool bouncesRight = (sprite.getPosition().x > xRightLimit && movement.x() > 0);
+	bool bouncesLeft = (sprite.getPosition().x < 0 && movement.x() < 0);
+
+	if (bouncesRight || bouncesLeft)
+	{
+		-movement.x();
+	}
+
+	// top or bottom
+	bool bouncesBottom = (sprite.getPosition().y > yBottomLimit && movement.y() > 0);
+	bool bouncesTop = (sprite.getPosition().y < 0 && movement.y() < 0);
+
+	if (bouncesBottom || bouncesTop)
+	{
+		-movement.y();
+	}
+
+	// set mushroom position
+	sprite.setPosition((sprite.getPosition().x + movement.x()), (sprite.getPosition().y + movement.y()));
 
 }
 

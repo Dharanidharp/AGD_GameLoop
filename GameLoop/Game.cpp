@@ -1,5 +1,4 @@
 #include "Game.h"
-#include <iostream>
 
 // CONSTRUCTOR AND DESTRUCTOR
 
@@ -10,7 +9,7 @@
 //      * Load the texture file (mushroom50-50.png) into the sf::Texture member variable using the loadFromFile function of the sf::Texture class.
 //      * Set the sf::Texture variable as the texture of the sf::Sprite member (using the sf::Sprite::setTexture(sf::Texture) function).
 
-Game::Game() : window{ "Game", sf::Vector2u(800,600) }, movement{ 4.0f,4.0f }, pause{ false }
+Game::Game() : pause{false}, window{ "Game", sf::Vector2u(800,600) }, movement{ 4.0f,4.0f }
 {
 	mushroomTexture.loadFromFile("../GameLoop/mushroom50-50.png");
 	sprite.setTexture(mushroomTexture);
@@ -31,8 +30,7 @@ Game::~Game()
 // 3. For handling the input. This logic will not handle any input yet, so define an empty handling function.
 void Game::handleInput()
 {
-	if (getchar() == ' ')
-		pause = !pause;
+
 }
 
 
@@ -42,11 +40,8 @@ void Game::handleInput()
 //       but it will work for now).
 void Game::update()
 {
-	while (!pause) 
-	{
-		moveMushroom();
-		windowMember()->update();
-	}
+	moveMushroom();
+	windowMember()->update();
 }
 
 
@@ -56,12 +51,9 @@ void Game::update()
 //    c) Our window also offers functionality for displaying all that has been drawn since the last clear. Call the method that ends the draw on the window now.
 void Game::render()
 {
-	while (!pause) 
-	{
-		windowMember()->beginDraw();
-		windowMember()->draw(sprite);
-		windowMember()->endDraw();
-	}
+	windowMember()->beginDraw();
+	windowMember()->draw(sprite);
+	windowMember()->endDraw();
 }
 
 

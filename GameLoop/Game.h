@@ -41,5 +41,8 @@ private:
 	// second will be the sprite to draw in the window. These are variables, not pointers.
 	sf::Texture mushroomTexture;
 	sf::Sprite sprite;
+
+	// pause
+	bool pause;
 };
 

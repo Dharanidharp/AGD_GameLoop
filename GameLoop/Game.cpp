@@ -31,7 +31,7 @@ Game::~Game()
 // 3. For handling the input. This logic will not handle any input yet, so define an empty handling function.
 void Game::handleInput()
 {
-	sf::Event event{};
+	sf::Event event;
 	if (event.key.code == sf::Keyboard::Space)
 	{
 		pause = !pause;

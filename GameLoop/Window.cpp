@@ -50,7 +50,7 @@ void Window::create()
 
 
 	//Call the function create() in sf::RenderWindow window, passing as parameters in this order: video mode, window title and style.
-	sf::RenderWindow create(videoMode, windowTitle, style);
+	window.create(videoMode, windowTitle, style);
 
 }
 
@@ -71,13 +71,13 @@ void Window::beginDraw()
 {
 	//sf::RenderWindow has a function clear(), which clears the screen with a color. Call this function passing a black colour
 	// (sf::Color::Black) as a parameter.
-	sf::RenderWindow clear(sf::Color Black);
+	window.clear(sf::Color::Black);
 
 }
 
 void Window::draw(sf::Drawable& drawable) {
 	// sf::RenderWindow has a function "draw" that receives as parameter a sf::Drawable&. Simply redirect this call to the window method.
-	sf::RenderWindow draw(sf::Drawable & window);
+	window.draw(drawable);
 
 }
 
@@ -85,7 +85,7 @@ void Window::endDraw()
 {
 	// It's time to display all that we've drawn since the last time we cleared the screen.
 	// Simply call the display() function in the sf::RenderWindow window object.
-	sf::RenderWindow display();
+	window.display();
 }
 
 void Window::toggleFullscreen()

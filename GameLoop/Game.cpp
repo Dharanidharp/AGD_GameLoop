@@ -9,36 +9,57 @@
 //      * Load the texture file (mushroom50-50.png) into the sf::Texture member variable using the loadFromFile function of the sf::Texture class.
 //      * Set the sf::Texture variable as the texture of the sf::Sprite member (using the sf::Sprite::setTexture(sf::Texture) function).
 
+Game::Game() : window{ "Game", sf::Vector2u(800,600) }, vector{ 4.0f,4.0f }
+{
+	mushroomTexture.loadFromFile("../GameLoop/mushroom50-50.png");
+	sprite.setTexture(mushroomTexture);
+}
 
 
 
 // 2.  Define an empty default destructor.
+Game::~Game()
+{
 
+}
 
 
 
 // MEMBER FUNCTIONS:
 
 // 3. For handling the input. This logic will not handle any input yet, so define an empty handling function.
+void Game::handleInput()
+{
 
+}
 
 
 // 4. For updating tha game state:
 //	  a) Call the private function of this class that executes the logic (mushroom movement).
 //    b) Call the update function of the window (the window does handle input in the update function. This is not really orthodox, 
 //       but it will work for now).
-
+void Game::update()
+{
+	moveMushroom();
+	window()->update();
+}
 
 
 // 5. Function for rendering the game:
 //    a) Our window object offers functionality for clearing the screen. Call the method that starts the draw on the window member first.
 //    b) Draw the mushroom on screen, by calling the draw function in window that receives a reference to a sf::Drawable& reference.
 //    c) Our window also offers functionality for displaying all that has been drawn since the last clear. Call the method that ends the draw on the window now.
+void Game::render()
+{
 
+}
 
 
 // 6. Define the function that returns a pointer to the window member variable of this class.
-
+Window* Game::window()
+{
+	return &window;
+}
 
 
 
